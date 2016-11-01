@@ -9,7 +9,7 @@
         <welcome-file>index</welcome-file>
     </welcome-file-list>
     
-	 <!-- spring mvc配置开始  -->
+	<!-- spring mvc配置开始  -->
 	<!-- 
 	Springmvc本质上就是一个Servlet,DispatcherServle就是Springmvc的入口。
 	在配置DispatcherServle的时候可以设置contextConfigLocation来指定springmvc配置文件的位置，
@@ -24,7 +24,6 @@
         <servlet-name>let'sGo</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-    
     <!-- spring mvc配置结束  -->
 
 </web-app>
