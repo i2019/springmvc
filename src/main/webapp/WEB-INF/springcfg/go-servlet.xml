@@ -6,8 +6,21 @@
    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	 
+	<!-- 
+	spring mvc 的<mvc;resources mapping="***" location="***">标签是在spring3.0.4出现的，主要是用来进行静态资源的访问。
+	 -->
+	<!-- 为视图增加前缀与后缀 -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	       <property name="prefix" value="/WEB-INF/pages/"/>
+	       <property name="suffix" value=".jsp"/>
+	</bean>
+    
 	<!-- mvc:annotation-driven一键式配置 -->
     <mvc:annotation-driven/>
+    
+    <context:component-scan base-package="ty.sprmvc.service"/>
+    
     <!-- 
     context:component-scan设置扫描通过注释配置的类
     context:include-filter设置只扫描@Controller，其他的交给spring容器去管理
@@ -15,4 +28,5 @@
     <context:component-scan base-package="ty.sprmvc" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
+
 </beans>

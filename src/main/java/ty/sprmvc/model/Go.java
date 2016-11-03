@@ -1,4 +1,4 @@
-package ty.sprmvc.controller;
+package ty.sprmvc.model;
 
 public class Go {
 	private String goMsg;

@@ -9,6 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import ty.sprmvc.model.Go;
 
 @Controller
 public class GoController implements EnvironmentAware{
@@ -20,15 +23,20 @@ public class GoController implements EnvironmentAware{
 		this.environment=environment;
 	}
 	
+	@RequestMapping(value="/")
+	public String get(){
+		return "product/ProductForm";
+	}
+		
 	//处理HEAD类型的“/”请求
 	@RequestMapping(value={"/"},method={RequestMethod.HEAD})
 	public String head(){
-		return "WEB-INF/pages/go.jsp";
+		return "go";
 	}
 	
 	//处理GET类型的“/index”请求
-	@RequestMapping(value={"/index"},method={RequestMethod.GET})
-	public String index(Model model){
+	@RequestMapping(value={"/go.do"},method={RequestMethod.GET})
+	public String go(Model model){
 		
 		Go go=new Go();
 		BeanWrapper bw=PropertyAccessorFactory.forBeanPropertyAccess(go);
@@ -37,7 +45,7 @@ public class GoController implements EnvironmentAware{
 		bw.setPropertyValue(propertyValue);
 		
 		model.addAttribute("msg", go.getGoMsg()+go.getGoName()+"！"+"Let's Go!");
-		return "WEB-INF/pages/go.jsp";
+		return "go.jsp";
 	}
 
 	
