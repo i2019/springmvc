@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>View Product</title>
-<link href="static_resources/css/product.css" rel="stylesheet" type="text/css"/>
+<link href="css/product.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="global">

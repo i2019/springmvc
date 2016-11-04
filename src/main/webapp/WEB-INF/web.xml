@@ -3,7 +3,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns="http://java.sun.com/xml/ns/javaee" 
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-
+	
     <display-name>springmvc</display-name>
     <distributable/>
 	
@@ -14,9 +14,9 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 	<!-- static_resources开头的路径，默认链接静态资源文件 -->
 	<servlet-mapping>  
 		<servlet-name>default</servlet-name>  
-		<url-pattern>/static_resources/*</url-pattern>  
+		<url-pattern>/static_resources</url-pattern>  
 	</servlet-mapping>  
-	   
+
 	<!-- spring mvc配置开始  -->
 	<!-- 
 	Springmvc本质上就是一个Servlet,DispatcherServle就是Springmvc的入口。
@@ -37,7 +37,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 	    <url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
-	 <servlet>
+	<servlet>
 	    <servlet-name>product</servlet-name>
 	    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 	    <init-param>
@@ -48,7 +48,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 	</servlet>
 	<servlet-mapping>
 	    <servlet-name>product</servlet-name>
-	    <url-pattern>/*product.do</url-pattern>
+	    <url-pattern>/*pro</url-pattern>
 	</servlet-mapping>
 	<!-- spring mvc配置结束  -->
 	

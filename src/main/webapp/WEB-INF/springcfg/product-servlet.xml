@@ -1,33 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <beans xmlns="http://www.springframework.org/schema/beans"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-   xmlns:p="http://www.springframework.org/schema/p"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
    xmlns:context="http://www.springframework.org/schema/context"
    xmlns:mvc="http://www.springframework.org/schema/mvc"
    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-   
-<!--  
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
--->    
-    <!-- 配置方式 -->
-    <!--    
-    <bean name="/input-product" class="ty.sprmvc.controller.product.InputProductController"/>
-    <bean name="/save-product" class="ty.sprmvc.controller.product.SaveProductController"/>
-	--> 
-	
-	<!-- 注解方式 -->
-	<!-- mvc:annotation-driven一键式配置 -->
-    <mvc:annotation-driven/>
-    <!-- context:component-scan设置扫描通过注释配置的类
-    context:include-filter设置只扫描@Controller，其他的交给spring容器去管理-->
-    <context:component-scan base-package="ty.sprmvc.controller.product" use-default-filters="false">
-		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
-	</context:component-scan>
-    
+     
 </beans>

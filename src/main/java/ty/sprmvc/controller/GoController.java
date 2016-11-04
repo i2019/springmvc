@@ -45,7 +45,7 @@ public class GoController implements EnvironmentAware{
 		bw.setPropertyValue(propertyValue);
 		
 		model.addAttribute("msg", go.getGoMsg()+go.getGoName()+"！"+"Let's Go!");
-		return "go.jsp";
+		return "go";
 	}
 
 	

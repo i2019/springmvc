@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Save Product</title>
-<link rel="stylesheet" href="static_resources/css/product.css" />
+<link rel="stylesheet" href="css/product.css" />
 </head>
 <body>
 <div id="global">

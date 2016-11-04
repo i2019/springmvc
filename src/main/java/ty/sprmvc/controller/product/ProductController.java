@@ -29,7 +29,7 @@ public class ProductController{
     @Autowired
     private ProductService productService;
     
-    @RequestMapping(value={"/input-product.do"},method={RequestMethod.GET,RequestMethod.POST})
+    @RequestMapping(value={"/input-product.pro"},method={RequestMethod.GET,RequestMethod.POST})
     public ModelAndView inputProduct(HttpServletRequest request,HttpServletResponse response) 
     		throws Exception {
         logger.info("InputProductController called");
@@ -37,7 +37,7 @@ public class ProductController{
         return new ModelAndView("product/ProductForm");
     }
     
-    @RequestMapping(value={"/save-product.do"},method={RequestMethod.POST,RequestMethod.GET})
+    @RequestMapping(value={"/save-product.pro"},method={RequestMethod.POST,RequestMethod.GET})
    /*
     public ModelAndView saveProduct(HttpServletRequest request
     		,HttpServletResponse response
@@ -75,7 +75,7 @@ public class ProductController{
         //return new ModelAndView("product/ProductDetails", "product",product);
     
     }
-    @RequestMapping(value = "/view-product.do/{id}")
+    @RequestMapping(value = "/view-product.pro/{id}")
     public String viewProduct(@PathVariable String id, Model model) {
         Product product = productService.get(id);
         

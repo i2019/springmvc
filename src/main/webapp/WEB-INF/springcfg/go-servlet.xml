@@ -7,9 +7,23 @@
    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	 
-	<!-- 
-	spring mvc 的<mvc;resources mapping="***" location="***">标签是在spring3.0.4出现的，主要是用来进行静态资源的访问。
-	 -->
+    <!--  
+	 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+	-->    
+    <!-- 配置方式 -->
+    <!--    
+    <bean name="/input-product" class="ty.sprmvc.controller.product.InputProductController"/>
+    <bean name="/save-product" class="ty.sprmvc.controller.product.SaveProductController"/>
+	--> 
+    
+	<!-- 行静态资源的访问-->
+	<mvc:resources mapping="/js/**" location="/static_resources/js/" />
+    <mvc:resources mapping="/images/**" location="/static_resources/images/" />
+    <mvc:resources mapping="/css/**" location="/static_resources/css/" />
+
 	<!-- 为视图增加前缀与后缀 -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	       <property name="prefix" value="/WEB-INF/pages/"/>
@@ -19,7 +33,7 @@
 	<!-- mvc:annotation-driven一键式配置 -->
     <mvc:annotation-driven/>
     
-    <context:component-scan base-package="ty.sprmvc.service"/>
+    <context:component-scan base-package="ty.sprmvc"/>
     
     <!-- 
     context:component-scan设置扫描通过注释配置的类
@@ -28,5 +42,20 @@
     <context:component-scan base-package="ty.sprmvc" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
+	
+	<!-- spring提供的类型转换 -->
+	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <list>
+                <bean class="ty.sprmvc.util.StringToLocalDateConverter">
+                    <constructor-arg type="java.lang.String" value="yyyy-MM-dd"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
 
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="/WEB-INF/resource/messages" />
+    </bean>
+     
 </beans>

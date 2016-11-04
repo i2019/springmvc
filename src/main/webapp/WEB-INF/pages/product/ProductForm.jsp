@@ -2,11 +2,11 @@
 <html>
 <head>
 <title>Add Product Form</title>
-<link href="static_resources/css/product.css" rel="stylesheet" type="text/css"/>
+<link href="css/product.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="global">
-<form action="save-product.do" method="post">
+<form action="save-employee.pro?number=${number}" method="post">
     <fieldset>
         <legend>Add a product</legend>
             <p>
