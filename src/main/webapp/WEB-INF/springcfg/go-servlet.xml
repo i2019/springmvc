@@ -34,7 +34,7 @@
     <mvc:annotation-driven/>
     
     <context:component-scan base-package="ty.sprmvc"/>
-    
+   
     <!-- 
     context:component-scan设置扫描通过注释配置的类
     context:include-filter设置只扫描@Controller，其他的交给spring容器去管理
@@ -44,6 +44,17 @@
 	</context:component-scan>
 	
 	<!-- spring提供的类型转换 -->
+	<bean id="conversionService"
+        class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
+            <set>
+                <bean class="ty.sprmvc.formatter.LocalDateFormatter">
+                    <constructor-arg type="java.lang.String" value="yyyy-MM-dd" />
+                </bean>
+            </set>
+        </property>
+    </bean>
+	<!--  
 	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
         <property name="converters">
             <list>
@@ -53,7 +64,8 @@
             </list>
         </property>
     </bean>
-
+	-->
+	<!-- 验证消息配置文件 -->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="/WEB-INF/resource/messages" />
     </bean>

@@ -10,10 +10,11 @@
     <h2>:${message }</h2>
     <p>
         <h5>Details:</h5>
+        Id:${product.id}<br/>
         Product Name: ${product.name}<br/>
         Description: ${product.description}<br/>
         Price: $${product.price}<br/>
-        Id:${product.id}
+        productionDate:${product.productionDate}
     </p>
 </div>
 </body>

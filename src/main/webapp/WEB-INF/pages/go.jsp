@@ -3,9 +3,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>go</title>
+<title>主页</title>
 </head>
 <body>
+<h1>Spring MVC</h1>
 ${msg}
 </body>
 </html>

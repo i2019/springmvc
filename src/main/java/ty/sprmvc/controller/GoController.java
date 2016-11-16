@@ -25,7 +25,7 @@ public class GoController implements EnvironmentAware{
 	
 	@RequestMapping(value="/")
 	public String get(){
-		return "product/ProductForm";
+		return "go";
 	}
 		
 	//处理HEAD类型的“/”请求

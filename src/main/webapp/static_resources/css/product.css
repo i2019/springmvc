@@ -35,7 +35,13 @@ form label {
 #buttons {
     text-align: right;
 }
-
 #errors, li {
 	color: red;
+}
+.error {
+    color: red;
+    font-size: 9pt;	
+}
+.errorLine {
+	text-align: center;
 }
